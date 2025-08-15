@@ -207,3 +207,22 @@
     bind();
   }
 })();
+
+// ✅ Exponer la función globalmente
+window.insertarWidgetEnvioCorreo = function() {
+  const widget = document.getElementById("shipping-widget");
+  if (!widget) {
+    // Si el widget no existe, lo crea y recalcula
+    const mount = document.querySelector(".js_cart_summary") || document.querySelector("main");
+    if (mount) {
+      const evt = new Event("DOMContentLoaded");
+      document.dispatchEvent(evt);
+    }
+  } else {
+    // Si ya existe, solo recalcula
+    const recalcEvent = new Event("input");
+    document.dispatchEvent(recalcEvent);
+  }
+};
+
+
