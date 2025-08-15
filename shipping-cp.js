@@ -5,7 +5,7 @@
   const FALLBACK_SHIPPING = 4500;
   const ORIGIN_CP = "1757";
   const CURRENCY = "ARS";
-  const PROXY_RATES_URL = "https://proxy-correo.onrender.com"; 
+  const PROXY_RATES_URL = "https://proxy-correo.onrender.com/api/correo-tarifa";
 
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
@@ -224,5 +224,6 @@ window.insertarWidgetEnvioCorreo = function() {
     document.dispatchEvent(recalcEvent);
   }
 };
+
 
 
